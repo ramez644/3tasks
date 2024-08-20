@@ -1,0 +1,49 @@
+﻿@Model
+<div>
+    hello handsome
+</div>
+
+<table class="table">
+
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">descrition</th>
+      <th scope="col">Image</th>
+      <th scope="col">Price</th>
+
+    </tr>
+  </thead>
+  <tbody>
+      @foreach(var item in Model){
+    <tr>
+      <th scope="row">@item.Id</th>
+      <td>@item.Name</td>
+
+
+                <td>@item.Description</td>
+                <td>@item.Price</td>
+                <td>
+
+                    <img src="/prods/@item.ImagePath" />
+                </td>
+                <td>
+                    <a href="shows/@item.Id" class="button">Go to card</a>
+                   
+                </td>
+              
+    </tr>
+      }
+      <style>
+            a.button {
+                padding: 1px 6px;
+                border: 1px outset buttonborder;
+                border-radius: 3px;
+                color: buttontext;
+                background-color: buttonface;
+                text-decoration: none;
+            }
+      </style>
+  </tbody>
+</table>
